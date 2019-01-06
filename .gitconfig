@@ -185,3 +185,9 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+
+[user]
+
+	name = Judson Neer
+	email = judson.neer@gmail.com
+	signingkey = 5A226A6602F326C2
