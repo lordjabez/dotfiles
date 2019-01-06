@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+
+# Add some items to the `$PATH`
+export PATH="/usr/local/sbin:$PATH";
