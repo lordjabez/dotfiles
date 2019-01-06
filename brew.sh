@@ -43,6 +43,7 @@ brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
 brew install openssl
+bres install readline
 brew install screen
 brew install gmp
 
@@ -52,6 +53,12 @@ brew install git
 brew install git-lfs
 brew install ssh-copy-id
 brew install tree
+
+# Development tools
+brew install nvm
+brew install pyenv
+brew install sqlite3
+brew install zlib
 
 # Remove outdated versions from the cellar.
 brew cleanup

@@ -32,3 +32,14 @@ export MANPAGER='less -X';
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
+
+# Ensure brew-installed libraries can be found
+for library in openssl sqlite zlip; do
+  export LDFLAGS="$LDFLAGS -L/usr/local/opt/$library/lib"
+  export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/$library/include"
+done
+
+
+# Node version manager setup (normally disabled to speed up launch)
+# export NVM_DIR="$(brew --prefix nvm)"
+# source "$NVM_DIR/nvm.sh" && nvm use --delete-prefix node --silent
