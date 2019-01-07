@@ -12,14 +12,24 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias dk="cd ~/Documents/Keybase"
+alias dkp="cd ${KEYBASE_PRIVATE_PATH}"
+alias dkt="cd ${KEYBASE_TEAM_PATH}"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dp="cd ~/Projects"
 alias l="ls"
+alias lp="lpass"
+alias a="atom -n"
 alias g="git"
 alias d="docker"
 alias k="kubectl"
+
+# Base64 tools
+alias bd="pbpaste | base64 --decode | pbcopy"
+alias be="pbpaste | base64 | pbcopy"
+
+# JSON tools
+alias j="pbpaste | jq '.' | pbcopy"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -149,3 +159,20 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+
+# Network helpers
+alias netscan="sudo arp-scan --localnet"
+
+
+# Lastpass Helpers
+alias lpk="lp show Keybase -q --password | tr -d '\n' | pbcopy"
+alias lpl="lp show LDAP -q --password | tr -d '\n'| pbcopy"
+
+# Kubernetes helpers
+alias k-1.8.3="ln -fs /usr/local/bin/kubectl-1.8.3 /usr/local/bin/kubectl"
+alias k-latest="ln -fs /usr/local/bin/kubectl-latest /usr/local/bin/kubectl"
+alias k-docker="ln -fs /usr/local/bin/kubectl.docker /usr/local/bin/kubectl"
+alias ksc="source ${KEYBASE_TEAM_PATH}/votem/bin/set-kube-config.bash"
+alias kgc="kubectl config get-contexts"
+alias kuc="kubectl config use-context"

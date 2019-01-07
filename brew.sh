@@ -49,8 +49,11 @@ brew install gmp
 
 # Install other useful binaries.
 brew install ack
+brew install arp-scan
+brew install jq
 brew install git
 brew install git-lfs
+brew install lastpass-cli
 brew install ssh-copy-id
 brew install tree
 
