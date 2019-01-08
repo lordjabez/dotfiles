@@ -56,6 +56,7 @@ brew install git-lfs
 brew install lastpass-cli
 brew install ssh-copy-id
 brew install tree
+brew install watch
 
 # Development tools
 brew install nvm
