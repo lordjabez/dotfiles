@@ -4,7 +4,7 @@
 export EDITOR='nano';
 
 # Keybase path
-export KEYBASE_BASE_PATH="/Volumes/Keybase\ \(jneer\)"
+export KEYBASE_BASE_PATH="$HOME/Keybase"
 export KEYBASE_PRIVATE_PATH="${KEYBASE_BASE_PATH}/private/jneer"
 export KEYBASE_PUBLIC_PATH="${KEYBASE_BASE_PATH}/public"
 export KEYBASE_TEAM_PATH="${KEYBASE_BASE_PATH}/team"
