@@ -169,3 +169,12 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# Grep recursively and ignore case
+function rgrep () { grep -ri "${@}" .; }
+
+# Set up Node version manager (not normally done on all shells since it slows loading)
+function nvm-load() {
+  export NVM_DIR="$(brew --prefix nvm)"
+  source "$NVM_DIR/nvm.sh" && nvm use --delete-prefix node --silent
+}
