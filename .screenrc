@@ -6,3 +6,15 @@ defscrollback 32000
 
 # Always start `screen` with UTF-8 enabled (`screen -U`)
 defutf8 on
+
+# Turn on autologging and set a log location
+deflog on
+logfile $HOME/log/screen/screen-%S-%n.log
+
+# Use colors (see: https://gist.github.com/joaopizani/2718397)
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce on
+
+# Don't wait for X server (see: https://gist.github.com/tnarihi/3c459b4df0ff7a64695c)
+unsetenv DISPLAY
