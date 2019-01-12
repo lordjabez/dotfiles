@@ -468,7 +468,7 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 
-# Set up symlinks to dotfiles
+# Set up symlinks to dotfiles and private files in Keybase
 pushd ~
 ln -fs .dotfiles/.bash_profile
 ln -fs .dotfiles/.bashrc
@@ -478,8 +478,14 @@ ln -fs .dotfiles/.gitattributes
 ln -fs .dotfiles/.gitconfig
 ln -fs .dotfiles/.gitignore
 ln -fs .dotfiles/.hushlogin
+ln -fs .dotfiles/.inputrc
 ln -fs .dotfiles/.screenrc
 ln -fs .dotfiles/.wgetrc
+ln -fs /keybase/private/jneer/.aws
+ln -fs /keybase/private/jneer/.docker
+ln -fs /keybase/private/jneer/.kube
+ln -fs /keybase/private/jneer/.npmrc
+ln -fs /keybase/private/jneer/.ssh
 popd
 
 
