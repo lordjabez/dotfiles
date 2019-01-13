@@ -40,7 +40,7 @@ export MANPAGER='less -X';
 export GPG_TTY=$(tty);
 
 # Ensure brew-installed libraries can be found
-for library in libpcap openssl sqlite zlip; do
+for library in readline libpcap openssl sqlite zlib; do
   export LDFLAGS="$LDFLAGS -L/usr/local/opt/$library/lib"
   export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/$library/include"
 done
