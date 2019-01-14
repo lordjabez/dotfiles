@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# ~/.macos — https://mths.be/macos
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -11,6 +10,7 @@ sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -105,6 +105,24 @@ sudo rm -rf /private/var/vm/sleepimage
 sudo touch /private/var/vm/sleepimage
 # …and make sure it can’t be rewritten
 sudo chflags uchg /private/var/vm/sleepimage
+
+
+###############################################################################
+# Network                                                                     #
+###############################################################################
+
+
+# Activate basic firewall
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on # enable fw
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on # enable logging
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on # dont respond to pings
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned on
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp on
+sudo pkill -HUP socketfilterfw
+
+# Disable IPv6 temporary addresses
+sudo sysctl net.inet6.ip6.use_tempaddr=0
+echo "net.inet6.ip6.use_tempaddr=0" | sudo tee -a /etc/sysctl.conf
 
 
 ###############################################################################
