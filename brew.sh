@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Install command-line tools using Homebrew.
-
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -50,6 +48,7 @@ brew install gmp
 # Install other useful binaries.
 brew install ack
 brew install arp-scan
+brew install curl --with-openssl
 brew install jq
 brew install git
 brew install git-lfs
