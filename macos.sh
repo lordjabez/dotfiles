@@ -477,6 +477,10 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 
+###############################################################################
+# Dotfile configuration                                                       #
+###############################################################################
+
 # Set up symlinks to dotfiles and private files in Keybase
 pushd ~
 ln -fs .dotfiles/.bash_profile
@@ -490,12 +494,29 @@ ln -fs .dotfiles/.hushlogin
 ln -fs .dotfiles/.inputrc
 ln -fs .dotfiles/.screenrc
 ln -fs .dotfiles/.wgetrc
-ln -fs /keybase/private/jneer/.aws
 ln -fs /keybase/private/jneer/.docker
-ln -fs /keybase/private/jneer/.kube
+ln -fs /keybase/private/jneer/.netrc
 ln -fs /keybase/private/jneer/.npmrc
 ln -fs /keybase/private/jneer/.ssh
+mkdir .aws
+ln -fs /keybase/private/jneer/.aws/config .aws/config
+ln -fs /keybase/private/jneer/.aws/credentials .aws/credentials
+mkdir .kube
+ln -fs /keybase/private/jneer/.kube/config .kube/config
 popd
-
-
 echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+
+###############################################################################
+# Development Tools                                                           #
+###############################################################################
+
+# Install aws-env helper
+wget -O aws-env https://raw.githubusercontent.com/fpco/devops-helpers/master/aws/aws-env.sh
+chmod a+x aws-env
+mv aws-env /usr/local/bin/aws-env
+
+# Install AWS credential helper for EKS
+wget -O aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.11.5/2018-12-06/bin/darwin/amd64/aws-iam-authenticator
+chmod a+x aws-iam-authenticator
+mv aws-iam-authenticator /usr/local/bin/aws-iam-authenticator
