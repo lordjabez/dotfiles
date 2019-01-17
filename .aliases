@@ -178,9 +178,6 @@ alias kgc="kubectl-latest config get-contexts"
 alias kuc="kubectl-latest config use-context"
 
 # AWS environment helpers
-alias atoolsp='eval $(aws-env -p e1c-tools-power-user)'
 alias atoolsa='eval $(aws-env -p e1c-tools-admin)'
-alias aprodp='eval $(aws-env -p e1c-prod-power-user)'
 alias aproda='eval $(aws-env -p e1c-prod-admin)'
-alias agova='eval $(aws-gov-env -p e1c-govcloud-admin)'
-alias aroota='eval $(aws-env -p e1c-root-admin)'
+alias agova='eval $(aws-env -p votem-govcloud)'
