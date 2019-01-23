@@ -58,6 +58,7 @@ brew install tree
 brew install watch
 
 # Development tools
+brew install kubernetes-helm
 brew install mysql
 brew install nvm
 brew install pyenv
