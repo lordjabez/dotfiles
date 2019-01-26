@@ -170,6 +170,13 @@ function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
+# Generate a random hex password of arbitrary length using OpenSSL
+# then print it out and also copy it to the clipboard
+function password () {
+  length=${1-32}
+  openssl rand -hex $length | tee /dev/tty | tr -d '\n' | pbcopy
+}
+
 # Grep recursively and ignore case
 function rgrep () { grep -ri "${@}" .; }
 
