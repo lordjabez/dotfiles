@@ -25,11 +25,11 @@ alias d="docker"
 alias k="kubectl"
 
 # Base64 tools
-alias bd="pbpaste | base64 --decode | tee $(tty) | pbcopy"
-alias be="pbpaste | base64 | tee $(tty) |pbcopy"
+alias bd="pbpaste | base64 --decode | tee /dev/tty | tr -d '\n' | pbcopy"
+alias be="pbpaste | base64 | tee /dev/tty | tr -d '\n' | pbcopy"
 
 # JSON tools
-alias j="pbpaste | jq '.' | tee $(tty) | pbcopy"
+alias j="pbpaste | jq '.' | tee /dev/tty | tr -d '\n' | pbcopy"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
