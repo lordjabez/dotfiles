@@ -49,21 +49,27 @@ brew install gmp
 brew install ack
 brew install arp-scan
 brew install curl --with-openssl
-brew install jq
+brew install gettext
+brew link --force gettext
 brew install git
 brew install git-lfs
+brew install jq
 brew install lastpass-cli
 brew install ssh-copy-id
 brew install tree
 brew install watch
 
 # Development tools
+brew cask install java
 brew install kubernetes-helm
 brew install mysql
 brew install nvm
 brew install pyenv
 brew install sqlite3
 brew install zlib
+
+# AWS tooling
+brew install ec2-api-tools
 
 # Remove outdated versions from the cellar.
 brew cleanup
