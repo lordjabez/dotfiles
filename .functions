@@ -185,3 +185,8 @@ function nvm-load() {
   export NVM_DIR="$(brew --prefix nvm)"
   source "$NVM_DIR/nvm.sh" && nvm use --delete-prefix node --silent
 }
+
+# Compute an AWS key fingerprint
+function aws-fingerprint() {
+  ssh-keygen -f "${1}" -e -m PKCS8 | openssl pkey -pubin -outform DER | openssl md5 -c
+}
