@@ -181,3 +181,4 @@ alias kuc="kubectl-latest config use-context"
 alias atoolsa='eval $(aws-env -p e1c-tools-admin)'
 alias aproda='eval $(aws-env -p e1c-prod-admin)'
 alias agova='eval $(aws-env -p votem-govcloud)'
+alias ae1cgova='eval $(aws-env -p e1c-govcloud)'
