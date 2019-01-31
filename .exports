@@ -44,3 +44,6 @@ for library in readline libpcap openssl sqlite zlib; do
   export LDFLAGS="$LDFLAGS -L/usr/local/opt/$library/lib"
   export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/$library/include"
 done
+
+# Go home path
+export GOPATH="${HOME}/.go"

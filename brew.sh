@@ -60,6 +60,7 @@ brew install tree
 brew install watch
 
 # Development tools
+brew install golang
 brew cask install java
 brew install kubernetes-helm
 brew install mysql
