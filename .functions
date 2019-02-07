@@ -178,6 +178,7 @@ function tre() {
 # then print it out and also copy it to the clipboard
 function password () {
   length=${1-32}
+  length=$(expr $length / 2)
   openssl rand -hex $length | tee /dev/tty | tr -d '\n' | pbcopy
 }
 
