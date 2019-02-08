@@ -494,6 +494,7 @@ ln -fs .dotfiles/.hushlogin
 ln -fs .dotfiles/.inputrc
 ln -fs .dotfiles/.screenrc
 ln -fs .dotfiles/.wgetrc
+ln -fs /keybase/private/jneer/.cloudflare
 ln -fs /keybase/private/jneer/.docker
 ln -fs /keybase/private/jneer/.netrc
 ln -fs /keybase/private/jneer/.npmrc
@@ -504,7 +505,6 @@ ln -fs /keybase/private/jneer/.aws/credentials .aws/credentials
 mkdir .kube
 ln -fs /keybase/private/jneer/.kube/config .kube/config
 popd
-echo "Done. Note that some of these changes require a logout/restart to take effect."
 
 
 ###############################################################################
@@ -527,3 +527,7 @@ unzip terraform.zip
 chmod a+x aws-iam-authenticator
 mv terraform /usr/local/bin/
 rm terraform.zip
+
+
+
+echo "Done. Note that some of these changes require a logout/restart to take effect."
