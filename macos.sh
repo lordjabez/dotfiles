@@ -529,5 +529,4 @@ mv terraform /usr/local/bin/
 rm terraform.zip
 
 
-
 echo "Done. Note that some of these changes require a logout/restart to take effect."
