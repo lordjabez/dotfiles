@@ -49,6 +49,7 @@ brew install gmp
 brew install ack
 brew install arp-scan
 brew install curl --with-openssl
+brew install fswatch
 brew install gettext
 brew link --force gettext
 brew install git
