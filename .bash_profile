@@ -59,4 +59,8 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
+# Load iTerm integrations
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# Load Travis CI tab completion
+[ -f /Users/jneer/.travis/travis.sh ] && source /Users/jneer/.travis/travis.sh

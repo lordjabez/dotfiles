@@ -15,6 +15,10 @@ pyenv install $PYTHON_VERSION
 pyenv global $PYTHON_VERSION
 
 
+# Travis CI
+sudo gem install travis --no-rdoc --no-ri
+
+
 # XCode
 xcode-select --install
 sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
