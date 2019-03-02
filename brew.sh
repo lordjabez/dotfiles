@@ -9,6 +9,9 @@ brew upgrade
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
 
+# Install alternative browsers
+brew cask install google-chrome
+
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
@@ -54,7 +57,10 @@ brew install gettext
 brew link --force gettext
 brew install git
 brew install git-lfs
+brew cask install iterm2
 brew install jq
+brew cask install keepingyouawake
+brew install keybase
 brew install lastpass-cli
 brew install ssh-copy-id
 brew install tree
@@ -73,6 +79,13 @@ brew install zlib
 
 # AWS tooling
 brew install ec2-api-tools
+
+# Docker tooling
+brew cask install docker
+brew install docker-completion
+brew install docker-compose-completion
+brew install docker-machine-completion
+
 
 # Remove outdated versions from the cellar.
 brew cleanup
