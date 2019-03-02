@@ -8,11 +8,13 @@ PYTHON_VERSION=3.7.1
 
 # Git LFS config
 git lfs install
-git lfs install --system
+sudo git lfs install --system
 
 
 # Node
-nvm install $NODE_VERSION
+export NVM_DIR="$(brew --prefix nvm)"
+source "$NVM_DIR/nvm.sh"
+nvm install $NODE_VERSION --delete-prefix node
 
 
 # Python
