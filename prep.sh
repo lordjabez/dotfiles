@@ -8,6 +8,12 @@
 # cd ~/.dotfiles
 # ./prep.sh
 # ./brew.sh
+# Close terminal and open iTerm
+# Launch keepingyouawake
+# Launch keybase and login
+# Launch docker
+# Launch atom
+# Launch chrome
 # ./dev.sh
 # ./macos.sh
 
