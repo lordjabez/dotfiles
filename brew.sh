@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
 # Upgrade any already-installed formulae.
 brew upgrade
 
+
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
 
-# Install alternative browsers
-brew cask install google-chrome
 
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -22,7 +22,7 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 # Install Bash 4.
 brew install bash
 brew install bash-completion2
@@ -33,25 +33,24 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
   chsh -s "${BREW_PREFIX}/bin/bash";
 fi;
 
-# Install `wget` with IRI support.
-brew install wget --with-iri
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
 brew install openssl
-bres install readline
+brew install readline
 brew install screen
 brew install gmp
+brew install vim
+brew install wget
 
 # Install other useful binaries.
 brew install ack
 brew install arp-scan
-brew install curl --with-openssl
+brew install curl
 brew install fswatch
 brew install gettext
 brew link --force gettext
@@ -60,13 +59,14 @@ brew install git-lfs
 brew cask install iterm2
 brew install jq
 brew cask install keepingyouawake
-brew install keybase
+brew cask install keybase
 brew install lastpass-cli
 brew install ssh-copy-id
 brew install tree
 brew install watch
 
 # Development tools
+brew cask install atom
 brew cask install gimp
 brew install golang
 brew cask install java
@@ -85,6 +85,9 @@ brew cask install docker
 brew install docker-completion
 brew install docker-compose-completion
 brew install docker-machine-completion
+
+# Install alternative browsers
+brew cask install google-chrome
 
 
 # Remove outdated versions from the cellar.
