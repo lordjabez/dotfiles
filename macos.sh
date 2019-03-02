@@ -1,25 +1,9 @@
 #!/usr/bin/env bash
 
 
-# Initial items to run manually
-# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-# brew install git
-# git clone https://github.com/lordjabez/dotfiles ~/.dotfiles
-# cd ~/.dotfiles
-# ./brew.sh
-# ./dev.sh
-# ./macos.sh
-
-
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
-
-# Ask for the administrator password upfront
-sudo -v
-
-# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 
 ###############################################################################
@@ -27,11 +11,14 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-computername="mycroft"
+echo -n "Enter a hostname for this computer: "
+read computername
 sudo scutil --set ComputerName "$computername"
 sudo scutil --set HostName "$computername"
 sudo scutil --set LocalHostName "$computername"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$computername"
+
+
 
 # Set power values
 sudo pmset -a standbydelayhigh 86400
@@ -485,36 +472,6 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # Expand the print dialog by default
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
-
-
-###############################################################################
-# Dotfile configuration                                                       #
-###############################################################################
-
-# Set up symlinks to dotfiles and private files in Keybase
-pushd ~
-ln -fs .dotfiles/.bash_profile
-ln -fs .dotfiles/.bashrc
-ln -fs .dotfiles/.curlrc
-ln -fs .dotfiles/.editorconfig
-ln -fs .dotfiles/.gitattributes
-ln -fs .dotfiles/.gitconfig
-ln -fs .dotfiles/.gitignore
-ln -fs .dotfiles/.hushlogin
-ln -fs .dotfiles/.inputrc
-ln -fs .dotfiles/.screenrc
-ln -fs .dotfiles/.wgetrc
-ln -fs /keybase/private/jneer/.cloudflare
-ln -fs /keybase/private/jneer/.docker
-ln -fs /keybase/private/jneer/.netrc
-ln -fs /keybase/private/jneer/.npmrc
-ln -fs /keybase/private/jneer/.ssh
-mkdir .aws
-ln -fs /keybase/private/jneer/.aws/config .aws/config
-ln -fs /keybase/private/jneer/.aws/credentials .aws/credentials
-mkdir .kube
-ln -fs /keybase/private/jneer/.kube/config .kube/config
-popd
 
 
 ###############################################################################
