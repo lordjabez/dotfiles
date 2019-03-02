@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 
 
+# Initial items to run manually
+# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# brew install git
+# git clone https://github.com/lordjabez/dotfiles ~/.dotfiles
+# cd ~/.dotfiles
+# ./brew.sh
+# ./dev.sh
+# ./macos.sh
+
+
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
