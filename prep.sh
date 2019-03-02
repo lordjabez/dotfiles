@@ -12,8 +12,9 @@
 # ./macos.sh
 
 
-# Make admins have password-less sudo powers
-sudo sed -i 's/(ALL) ALL/(ALL) NOPASSWD: ALL/' /etc/sudoers
+# Make admins have password-less sudo powers (note the extra empty
+# string parameter which is required for the MacOS version of sed)
+sudo sed -i '' 's/(ALL) ALL/(ALL) NOPASSWD: ALL/' /etc/sudoers
 
 
 # Set up symlinks to dotfiles and private files in Keybase
