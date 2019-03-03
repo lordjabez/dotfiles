@@ -11,6 +11,11 @@ git lfs install
 sudo git lfs install --system
 
 
+# Android
+brew cask install android-platform-tools
+brew cask install android-sdk
+
+
 # Node
 export NVM_DIR="$(brew --prefix nvm)"
 source "$NVM_DIR/nvm.sh"
