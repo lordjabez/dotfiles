@@ -25,6 +25,7 @@ sudo sed -i '' 's/(ALL) ALL/(ALL) NOPASSWD: ALL/' /etc/sudoers
 
 # Set up symlinks to dotfiles and private files in Keybase
 pushd ~
+ln -fs .dotfiles/.atom
 ln -fs .dotfiles/.bash_profile
 ln -fs .dotfiles/.bashrc
 ln -fs .dotfiles/.curlrc

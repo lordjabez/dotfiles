@@ -1,0 +1,13 @@
+packages: [
+  "busy-signal"
+  "intentions"
+  "language-latex"
+  "linter"
+  "linter-ui-default"
+  "package-sync"
+  "saveallthetime"
+  "seti-syntax"
+  "seti-ui"
+  "sort-lines"
+  "Sublime-Style-Column-Selection"
+]
