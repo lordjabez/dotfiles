@@ -3,6 +3,7 @@ packages: [
   "intentions"
   "language-latex"
   "linter"
+  "linter-flake8"
   "linter-ui-default"
   "package-sync"
   "saveallthetime"
