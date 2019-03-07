@@ -200,3 +200,9 @@
   name = Judson Neer
   email = judson.neer@gmail.com
   signingkey = 5A226A6602F326C2
+
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
