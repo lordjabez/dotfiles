@@ -28,6 +28,7 @@ pushd ~
 ln -fs .dotfiles/.atom
 ln -fs .dotfiles/.bash_profile
 ln -fs .dotfiles/.bashrc
+ln -fs .dotfiles/.config
 ln -fs .dotfiles/.curlrc
 ln -fs .dotfiles/.editorconfig
 ln -fs .dotfiles/.gitattributes
