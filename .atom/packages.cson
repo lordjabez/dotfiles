@@ -2,6 +2,7 @@ packages: [
   "busy-signal"
   "intentions"
   "language-latex"
+  "language-terraform"
   "linter"
   "linter-flake8"
   "linter-ui-default"
