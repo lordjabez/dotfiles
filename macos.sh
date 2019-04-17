@@ -11,13 +11,17 @@ osascript -e 'tell application "System Preferences" to quit'
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-echo -n "Enter a hostname for this computer: "
+echo -n "Enter a hostname for this computer, or leave blank to skip: "
 read computername
-sudo scutil --set ComputerName "$computername"
-sudo scutil --set HostName "$computername"
-sudo scutil --set LocalHostName "$computername"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$computername"
-
+if [[ ! -z "$computername" ]]; then
+  echo "Provided hostname is $computername"
+  sudo scutil --set ComputerName "$computername"
+  sudo scutil --set HostName "$computername"
+  sudo scutil --set LocalHostName "$computername"
+  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$computername"
+else
+  echo "No hostname will be set"
+fi
 
 
 # Set power values
