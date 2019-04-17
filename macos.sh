@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 
 # Close any open System Preferences panes, to prevent them from overriding

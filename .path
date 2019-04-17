@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
-
-
 # Add some items to the `$PATH`
 export PATH="/usr/local/sbin:$PATH"
 export PATH="${HOME}/.go/bin:$PATH"
