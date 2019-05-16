@@ -63,6 +63,7 @@ brew cask install keepingyouawake
 brew cask install keybase
 brew install lastpass-cli
 brew install ssh-copy-id
+brew install tmux
 brew install tree
 brew install watch
 
