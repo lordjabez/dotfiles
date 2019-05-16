@@ -9,5 +9,6 @@
 .atom/.node-gyp
 .atom/.npm
 .atom/.apm
+.atom/.atom*
 
 .config
