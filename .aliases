@@ -21,6 +21,7 @@ alias a="atom -n"
 alias g="git"
 alias d="docker"
 alias k="kubectl"
+alias t="terraform"
 
 # Base64 tools
 alias bd="pbpaste | base64 --decode | tee /dev/tty | tr -d '\n' | pbcopy"
