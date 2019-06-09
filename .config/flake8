@@ -1,4 +1,3 @@
 [flake8]
-ignore = D205
 max-line-length = 120
 max-complexity = 10
