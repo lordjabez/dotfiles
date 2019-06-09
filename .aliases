@@ -172,7 +172,6 @@ alias lpk="lp show Keybase -q --password | tr -d '\n' | pbcopy"
 alias lpl="lp show LDAP -q --password | tr -d '\n'| pbcopy"
 
 # Kubernetes helpers
-alias k-1.8.3="ln -fs /usr/local/bin/kubectl-1.8.3 /usr/local/bin/kubectl"
 alias k-latest="ln -fs /usr/local/bin/kubectl-latest /usr/local/bin/kubectl"
 alias k-docker="ln -fs /usr/local/bin/kubectl.docker /usr/local/bin/kubectl"
 alias ksc="source ${KEYBASE_TEAM_PATH}/knowink/bin/set-kube-config.bash"
@@ -180,9 +179,5 @@ alias kgc="kubectl-latest config get-contexts"
 alias kuc="kubectl-latest config use-context"
 
 # AWS environment helpers
-alias atoolsa='eval $(aws-env -p e1c-tools-admin)'
-alias aproda='eval $(aws-env -p e1c-prod-admin)'
-alias agova='eval $(aws-env -p votem-govcloud)'
-alias ae1cgova='eval $(aws-env -p e1c-govcloud)'
 alias avrsa='eval $(aws-env -p knowink-vrs)'
 alias avrsgova='eval $(aws-env -p knowink-vrs-gov)'
