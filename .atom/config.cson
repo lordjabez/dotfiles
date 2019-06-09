@@ -63,3 +63,5 @@
     hideProjectTab: true
   "status-bar":
     fullWidth: false
+  "tree-view":
+    hideVcsIgnoredFiles: true
