@@ -50,6 +50,8 @@
   "linter-flake8":
     maxComplexity: 10
     maxLineLength: 120
+  "linter-ui-default":
+    showPanel: true
   "package-sync":
     createOnChange: true
     forceOverwrite: true
