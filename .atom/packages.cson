@@ -1,5 +1,6 @@
 packages: [
   "busy-signal"
+  "count-word"
   "intentions"
   "language-latex"
   "language-terraform"
