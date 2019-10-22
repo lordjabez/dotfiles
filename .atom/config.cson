@@ -48,8 +48,12 @@
   "exception-reporting":
     userId: "529e4cbd-f529-455f-848a-079f8373bfdc"
   "linter-flake8":
+    executablePath: "/usr/local/bin/flake8"
     maxComplexity: 10
     maxLineLength: 120
+    projectConfigFile: [
+      ".flake8"
+    ]
   "linter-ui-default":
     showPanel: true
   "package-sync":

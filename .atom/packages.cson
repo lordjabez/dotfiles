@@ -1,9 +1,11 @@
 packages: [
+  "atom-cfn-lint"
   "busy-signal"
   "count-word"
   "intentions"
   "language-latex"
   "language-terraform"
+  "language-yaml-cloudformation"
   "linter"
   "linter-flake8"
   "linter-ui-default"
