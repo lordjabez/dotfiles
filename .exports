@@ -46,5 +46,9 @@ for library in readline libffi libpcap openssl sqlite zlib; do
   export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/$library/include"
 done
 
+# Fix issue with brew-installed utilities and bash completion
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
 # Go home path
 export GOPATH="${HOME}/.go"
