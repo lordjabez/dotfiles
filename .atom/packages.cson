@@ -7,6 +7,7 @@ packages: [
   "language-terraform"
   "language-yaml-cloudformation"
   "linter"
+  "linter-eslint"
   "linter-flake8"
   "linter-ui-default"
   "package-sync"
