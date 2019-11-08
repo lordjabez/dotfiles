@@ -57,6 +57,7 @@ brew install gettext
 brew link --force gettext
 brew install git
 brew install git-lfs
+brew install git-secrets
 brew cask install iterm2
 brew install jq
 brew cask install keepingyouawake
