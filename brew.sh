@@ -72,6 +72,7 @@ brew install watch
 brew cask install atom
 brew cask install gimp
 brew install golang
+brew install gradle
 brew cask install java
 brew install kubernetes-helm
 brew install mysql

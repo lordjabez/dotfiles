@@ -52,3 +52,7 @@ export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 
 # Go home path
 export GOPATH="${HOME}/.go"
+
+# Java/Android items
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home
+export ANDROID_HOME=/usr/local/Caskroom/android-sdk/4333796
