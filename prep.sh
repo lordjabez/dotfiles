@@ -39,14 +39,14 @@ ln -fs .dotfiles/.hushlogin
 ln -fs .dotfiles/.inputrc
 ln -fs .dotfiles/.screenrc
 ln -fs .dotfiles/.wgetrc
-ln -fs /keybase/private/jneer/.cloudflare
-ln -fs /keybase/private/jneer/.docker
-ln -fs /keybase/private/jneer/.netrc
-ln -fs /keybase/private/jneer/.npmrc
-ln -fs /keybase/private/jneer/.ssh
+ln -fs /Volumes/Keybase/private/jneer/.cloudflare
+ln -fs /Volumes/Keybase/private/jneer/.docker
+ln -fs /Volumes/Keybase/private/jneer/.netrc
+ln -fs /Volumes/Keybase/private/jneer/.npmrc
+ln -fs /Volumes/Keybase/private/jneer/.ssh
 mkdir .aws
-ln -fs /keybase/private/jneer/.aws/config .aws/config
-ln -fs /keybase/private/jneer/.aws/credentials .aws/credentials
+ln -fs /Volumes/Keybase/private/jneer/.aws/config .aws/config
+ln -fs /Volumes/Keybase/private/jneer/.aws/credentials .aws/credentials
 mkdir .kube
-ln -fs /keybase/private/jneer/.kube/config .kube/config
+ln -fs /Volumes/Keybase/private/jneer/.kube/config .kube/config
 popd
