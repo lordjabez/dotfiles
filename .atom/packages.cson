@@ -1,9 +1,11 @@
 packages: [
   "atom-cfn-lint"
+  "atom-cobol"
   "busy-signal"
   "count-word"
   "intentions"
   "language-latex"
+  "language-nginx"
   "language-terraform"
   "language-yaml-cloudformation"
   "linter"
