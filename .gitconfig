@@ -1,3 +1,7 @@
+[init]
+
+  defaultBranch = main
+
 [alias]
 
   # Stage items
@@ -115,6 +119,8 @@
   # Speed up commands involving untracked files such as `git status`.
   # https://git-scm.com/docs/git-update-index#_untracked_cache
   untrackedCache = true
+  pager = less -FMRiX
+  hooksPath = /Users/judneer/.git-templates/hooks
 
 [color]
 
@@ -173,6 +179,9 @@
   # Make `git push` push relevant annotated tags when pushing branches out.
   followTags = true
 
+[pull]
+  rebase = false
+
 # URL shorthands
 
 [url "git@github.com:"]
@@ -206,3 +215,18 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+
+[credential]
+
+  helper = ""
+  helper = !/usr/local/bin/aws codecommit --profile=$AWS_PROFILE credential-helper $@
+  UseHttpPath = true
+
+[secrets]
+
+  providers = git secrets --aws-provider
+  patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
+  patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
+  patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
+  allowed = AKIAIOSFODNN7EXAMPLE
+  allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY

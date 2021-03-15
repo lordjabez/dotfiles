@@ -1,4 +1,5 @@
 packages: [
+  "atom-beautify"
   "atom-cfn-lint"
   "atom-cobol"
   "busy-signal"
@@ -11,6 +12,7 @@ packages: [
   "linter"
   "linter-eslint"
   "linter-flake8"
+  "linter-remark"
   "linter-ui-default"
   "package-sync"
   "saveallthetime"

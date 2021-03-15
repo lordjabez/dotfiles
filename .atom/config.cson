@@ -58,8 +58,10 @@
     projectConfigFile: [
       ".flake8"
     ]
-  "linter-ui-default":
-    showPanel: true
+  "linter-markdown": {}
+  "linter-ui-default": {}
+  "markdown-preview":
+    useGitHubStyle: true
   "package-sync":
     createOnChange: true
     forceOverwrite: true

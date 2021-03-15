@@ -172,3 +172,9 @@ alias k-latest="ln -fs /usr/local/bin/kubectl-latest /usr/local/bin/kubectl"
 alias k-docker="ln -fs /usr/local/bin/kubectl.docker /usr/local/bin/kubectl"
 alias kgc="kubectl-latest config get-contexts"
 alias kuc="kubectl-latest config use-context"
+
+# Run v1 of the AWS CLI
+alias aws1="python3 -m awscli"
+
+# Follow AWS CloudWatch log group
+alias awslogs-follow="awslogs get -w --timestamp"
