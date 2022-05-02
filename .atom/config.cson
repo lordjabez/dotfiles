@@ -1,4 +1,8 @@
 "*":
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnType: false
+  "atom-typescript": {}
   autosave:
     enabled: true
   core:
@@ -39,7 +43,7 @@
     useTreeSitterParsers: false
   editor:
     autoIndentOnPaste: false
-    fontSize: 11
+    fontSize: 12
     lineHeight: 1.2
     maxScreenLineLength: 1024
     preferredLineLength: 120
@@ -51,6 +55,7 @@
   "linter-eslint":
     disabling:
       disableWhenNoEslintConfig: false
+    global: {}
   "linter-flake8":
     executablePath: "/usr/local/bin/flake8"
     maxComplexity: 10
@@ -59,7 +64,8 @@
       ".flake8"
     ]
   "linter-markdown": {}
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   "package-sync":
@@ -74,5 +80,4 @@
     hideProjectTab: true
   "status-bar":
     fullWidth: false
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}

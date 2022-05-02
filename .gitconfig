@@ -31,6 +31,9 @@
   # Commit all changes
   ca = !git add -A && git commit -av
 
+  # Commit all changes
+  crazy = !git add -A && git commit -av
+
   # Switch to a branch, creating it if necessary
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
@@ -120,7 +123,6 @@
   # https://git-scm.com/docs/git-update-index#_untracked_cache
   untrackedCache = true
   pager = less -FMRiX
-  hooksPath = /Users/judneer/.git-templates/hooks
 
 [color]
 

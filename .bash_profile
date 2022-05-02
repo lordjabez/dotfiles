@@ -29,11 +29,6 @@ elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
 
-# Enable tab completion for `lp` by marking it as an alias for `lpass`
-if type _lpass &> /dev/null && [ -f /usr/local/etc/bash_completion.d/lpass_bash_completion ]; then
-	complete -o default -o nospace -F _lpass lp;
-fi;
-
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
 	complete -o default -o nospace -F _git g;
@@ -59,8 +54,12 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
+# Add tab completion for the AWS CLI
+complete -C aws_completer aws
+
 # Load iTerm integrations
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # Load Travis CI tab completion
 [ -f /Users/jneer/.travis/travis.sh ] && source /Users/jneer/.travis/travis.sh
+export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"

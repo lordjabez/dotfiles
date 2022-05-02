@@ -2,23 +2,6 @@
 set -e
 
 
-# Initial items to run manually
-# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-# brew install git
-# git clone https://github.com/lordjabez/dotfiles ~/.dotfiles
-# cd ~/.dotfiles
-# ./prep.sh
-# ./brew.sh
-# Close terminal and open iTerm
-# Launch keepingyouawake
-# Launch keybase and login
-# Launch docker
-# Launch atom
-# Launch chrome
-# ./dev.sh
-# ./macos.sh
-
-
 # Make admins have password-less sudo powers (note the extra empty
 # string parameter which is required for the MacOS version of sed)
 sudo sed -i '' 's/(ALL) ALL/(ALL) NOPASSWD: ALL/' /etc/sudoers

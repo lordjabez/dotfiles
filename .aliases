@@ -22,6 +22,9 @@ alias d="docker"
 alias k="kubectl"
 alias t="terraform"
 
+# Docker tools
+alias dsp="docker system prune --volumes --force"
+
 # Base64 tools
 alias bd="pbpaste | base64 --decode | tee /dev/tty | tr -d '\n' | pbcopy"
 alias be="pbpaste | base64 | tee /dev/tty | tr -d '\n' | pbcopy"
