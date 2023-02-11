@@ -1,11 +1,8 @@
 # Set the default editor.
 export EDITOR='nano';
 
-# Keybase path
-export KEYBASE_BASE_PATH="/Volumes/Keybase"
-export KEYBASE_PRIVATE_PATH="${KEYBASE_BASE_PATH}/private/jneer"
-export KEYBASE_PUBLIC_PATH="${KEYBASE_BASE_PATH}/public"
-export KEYBASE_TEAM_PATH="${KEYBASE_BASE_PATH}/team"
+# Java items
+export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
 
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;
@@ -40,22 +37,6 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
 
-# Ensure brew-installed libraries can be found
-for library in readline libffi libpcap openssl sqlite zlib; do
-  export LDFLAGS="$LDFLAGS -L/usr/local/opt/$library/lib"
-  export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/$library/include"
-done
-
-# Help utilities that use OpenSSL find its packages
-export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
-
 # Fix issue with brew-installed utilities and bash completion
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
-# Go home path
-export GOPATH="${HOME}/.go"
-
-# Java/Android items
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-14.0.1.jdk/Contents/Home
-export ANDROID_HOME=/usr/local/Caskroom/android-sdk/4333796

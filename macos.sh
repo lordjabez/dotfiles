@@ -2,8 +2,8 @@
 set -e
 
 
-# Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
+# Close any open System Preferences panes, to prevent
+# them from overriding settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
 
@@ -31,7 +31,7 @@ sudo pmset -a standbydelaylow 3600
 sudo pmset -a displaysleep 15
 sudo pmset -a disksleep 15
 sudo pmset -a sleep 30
-sudo pmset -a destroyfvkeyonstandby 1
+sudo pmset -a destroyfvkeyonstandby 0
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -95,21 +95,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 
 ###############################################################################
-# SSD-specific tweaks                                                         #
-###############################################################################
-
-# Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0
-
-# Remove the sleep image file to save disk space
-sudo rm -rf /private/var/vm/sleepimage
-# Create a zero-byte file instead…
-sudo touch /private/var/vm/sleepimage
-# …and make sure it can’t be rewritten
-sudo chflags uchg /private/var/vm/sleepimage
-
-
-###############################################################################
 # Network                                                                     #
 ###############################################################################
 
@@ -169,10 +154,6 @@ sudo systemsetup -settimezone "America/Los_Angeles" > /dev/null
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
-
-# Require password 5 seconds after after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 5
 
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
@@ -304,12 +285,6 @@ defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
 # Hide indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool false
-
-# Wipe all (default) app icons from the Dock
-defaults write com.apple.dock persistent-apps -array
-defaults delete com.apple.dock persistent-apps
-defaults delete com.apple.dock persistent-others
-killall Dock
 
 # Show only open applications in the Dock
 defaults write com.apple.dock static-only -bool true

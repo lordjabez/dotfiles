@@ -218,12 +218,6 @@
 	required = true
 	clean = git-lfs clean -- %f
 
-[credential]
-
-  helper = ""
-  helper = !/usr/local/bin/aws codecommit --profile=$AWS_PROFILE credential-helper $@
-  UseHttpPath = true
-
 [secrets]
 
   providers = git secrets --aws-provider

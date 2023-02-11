@@ -7,9 +7,8 @@ set -e
 sudo sed -i '' 's/(ALL) ALL/(ALL) NOPASSWD: ALL/' /etc/sudoers
 
 
-# Set up symlinks to dotfiles and private files in Keybase
+# Set up symlinks to dotfiles
 pushd ~
-ln -fs .dotfiles/.atom
 ln -fs .dotfiles/.bash_profile
 ln -fs .dotfiles/.bashrc
 ln -fs .dotfiles/.config
@@ -22,14 +21,4 @@ ln -fs .dotfiles/.hushlogin
 ln -fs .dotfiles/.inputrc
 ln -fs .dotfiles/.screenrc
 ln -fs .dotfiles/.wgetrc
-ln -fs /Volumes/Keybase/private/jneer/.cloudflare
-ln -fs /Volumes/Keybase/private/jneer/.docker
-ln -fs /Volumes/Keybase/private/jneer/.netrc
-ln -fs /Volumes/Keybase/private/jneer/.npmrc
-ln -fs /Volumes/Keybase/private/jneer/.ssh
-mkdir .aws
-ln -fs /Volumes/Keybase/private/jneer/.aws/config .aws/config
-ln -fs /Volumes/Keybase/private/jneer/.aws/credentials .aws/credentials
-mkdir .kube
-ln -fs /Volumes/Keybase/private/jneer/.kube/config .kube/config
 popd

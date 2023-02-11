@@ -15,7 +15,10 @@ shopt -s histappend;
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
-# Enable some Bash 4 features when possible:
+# Ensure brew environment is properly set up
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Enable some Bash features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * Recursive globbing, e.g. `echo **/*.txt`
 for option in autocd globstar; do
@@ -60,6 +63,10 @@ complete -C aws_completer aws
 # Load iTerm integrations
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-# Load Travis CI tab completion
-[ -f /Users/jneer/.travis/travis.sh ] && source /Users/jneer/.travis/travis.sh
-export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
+# Jabba activation
+export JABBA_DIR="$(brew --prefix jabba)"
+[ -s "$JABBA_DIR/share/jabba/jabba.sh" ] && source "$JABBA_DIR/share/jabba/jabba.sh"
+
+# NVM activation
+export NVM_DIR="$(brew --prefix nvm)"
+source "$NVM_DIR/nvm.sh"
