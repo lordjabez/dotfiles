@@ -18,6 +18,7 @@ brew install \
 # Infrastructure tooling
 brew install \
   awscli \
+  aws-vault \
   terraform
 brew install --cask \
   docker
