@@ -25,27 +25,16 @@ for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null;
 done;
 
-# Add tab completion for many Bash commands
-if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-	source "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-	source /etc/bash_completion;
-fi;
+# Add tab completion for Bash commands installed by brew
+export BASH_COMPLETIONS_FOLDER="$(brew --prefix)/etc/bash_completion.d"
+for completion_file in $BASH_COMPLETIONS_FOLDER/*; do
+  source "$completion_file"
+done
 
-# Enable tab completion for `g` by marking it as an alias for `git`
-if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-	complete -o default -o nospace -F _git g;
-fi;
-
-# Enable tab completion for `d` by marking it as an alias for `docker`
-if type _docker &> /dev/null && [ -f /usr/local/etc/bash_completion.d/docker ]; then
-	complete -o default -o nospace -F _docker d;
-fi;
-
-# Enable tab completion for `k` by marking it as an alias for `kubectl`
-if type __start_kubectl &> /dev/null && [ -f /usr/local/etc/bash_completion.d/kubectl ]; then
-	complete -o default -o nospace -F __start_kubectl k;
-fi;
+# Enable tab completion for shortened commands
+complete -o default -o nospace -F __git_complete g
+complete -o default -o nospace -F _docker d
+complete -o default -o nospace -F __start_kubectl k
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
