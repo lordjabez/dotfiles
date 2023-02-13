@@ -59,3 +59,18 @@ export JABBA_DIR="$(brew --prefix jabba)"
 # NVM activation
 export NVM_DIR="$(brew --prefix nvm)"
 source "$NVM_DIR/nvm.sh"
+
+function aws-profile() {
+  if [[ -z "${1}" ]]; then
+    profiles=$(grep '\[profile' ~/.aws/config | tr -d '[]' | awk '{print $2}')
+    for profile in $profiles; do
+      if [[ "${profile}" == "${AWS_PROFILE}" ]]; then
+        echo "${profile} *"
+      else
+        echo "${profile}"
+      fi
+    done
+  else
+    export AWS_PROFILE="${1}"
+  fi
+}
