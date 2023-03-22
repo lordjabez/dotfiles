@@ -16,8 +16,15 @@ alias dp="cd ~/Projects"
 alias g="git"
 alias d="docker"
 alias k="kubectl"
+alias p="python3"
 alias s="subl"
 alias t="terraform"
+
+# Use Python 3 by default
+alias python=/usr/bin/python3
+
+# Better git diffs
+alias gd='git diff --color | sed -E "s/^([^-+ ]*)[-+ ]/\\1/" | less -r'
 
 # Docker tools
 alias dsp="docker system prune --volumes --force"
@@ -151,6 +158,7 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Network helpers
 alias netscan="sudo arp-scan --localnet"
+alias public-ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 
 # Run v1 of the AWS CLI
