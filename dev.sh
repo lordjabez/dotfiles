@@ -3,9 +3,7 @@ set -e
 
 
 # Intall git and some helpers
-brew install git git-lfs git-secrets
-git lfs install
-sudo git lfs install --system
+brew install git git-secrets
 
 
 # Common programming language managers

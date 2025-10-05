@@ -215,12 +215,6 @@
   email = jud.neer@gmail.com
   signingkey = 3AF8215FB31F0A6BF000F0845A226A6602F326C2
 
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-
 [secrets]
 
   providers = git secrets --aws-provider
