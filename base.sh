@@ -18,6 +18,8 @@ if ! ggrep -F -q "$BREW_BASH_PREFIX" /etc/shells; then
   echo "$BREW_BASH_PREFIX" | sudo tee -a /etc/shells;
   chsh -s "$BREW_BASH_PREFIX";
 fi;
+export BASH_COMPLETIONS_FOLDER="$(brew --prefix)/etc/bash_completion.d"
+rm -f "$BASH_COMPLETIONS_FOLDER/000_bash_completion_compat.bash"
 
 
 # Useful command line tools and libraries
