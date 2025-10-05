@@ -21,7 +21,7 @@ alias s="subl"
 alias t="terraform"
 
 # Use Python 3 by default
-alias python=/usr/bin/python3
+alias python="python3"
 
 # Better git diffs
 alias gd='git diff --color | sed -E "s/^([^-+ ]*)[-+ ]/\\1/" | less -r'

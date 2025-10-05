@@ -12,13 +12,18 @@ sudo git lfs install --system
 brew install \
   jabba \
   nvm \
-  pyenv
+  pyenv \
+  tfenv
 
 
 # Infrastructure tooling
 brew install \
   awscli \
-  aws-vault \
-  terraform
+  aws-vault
 brew install --cask \
   docker
+
+
+# Remove outdated versions from the cellar and ensure installation is healthy
+brew cleanup
+brew doctor
