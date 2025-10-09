@@ -52,7 +52,11 @@ brew install --cask \
   google-chrome \
   iterm2 \
   keepingyouawake \
-  sublime-text
+  microsoft-teams \
+  slack \
+  spotify \
+  sublime-text \
+  zoom
 
 
 # Remove outdated versions from the cellar and ensure installation is healthy
