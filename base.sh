@@ -36,22 +36,26 @@ brew install \
   grep \
   jq \
   moreutils \
+  openconnect \
   readline \
   screen \
   tmux \
   tree \
   vim \
   watch \
-  wget
+  wget \
+  xmlstarlet
 
 
 # Application software from casks
 brew install --cask \
+  drawio \
   font-monaspace \
   gimp \
   google-chrome \
   iterm2 \
   keepingyouawake \
+  microsoft-office \
   microsoft-teams \
   slack \
   spotify \

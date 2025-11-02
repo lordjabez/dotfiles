@@ -19,7 +19,9 @@ brew install \
   awscli \
   aws-vault
 brew install --cask \
-  docker
+  cursor \
+  docker \
+  kiro
 
 
 # Remove outdated versions from the cellar and ensure installation is healthy
