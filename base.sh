@@ -49,6 +49,7 @@ brew install \
 
 # Application software from casks
 brew install --cask \
+  claude \
   drawio \
   font-monaspace \
   gimp \

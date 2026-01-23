@@ -1,3 +1,7 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash"
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -35,6 +39,7 @@ done
 complete -o default -o nospace -F __git_complete g
 complete -o default -o nospace -F _docker d
 complete -o default -o nospace -F __start_kubectl k
+complete -o default -o nospace -F _tmux x
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
@@ -51,10 +56,6 @@ complete -C aws_completer aws
 
 # Load iTerm integrations
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
-# Jabba activation
-export JABBA_DIR="$(brew --prefix jabba)"
-[ -s "$JABBA_DIR/share/jabba/jabba.sh" ] && source "$JABBA_DIR/share/jabba/jabba.sh"
 
 # NVM activation
 export NVM_DIR="$(brew --prefix nvm)"
@@ -74,3 +75,9 @@ function aws-profile() {
     export AWS_PROFILE="${1}"
   fi
 }
+
+[ -s "/opt/homebrew/opt/jabba/jabba.sh" ] && source "/opt/homebrew/opt/jabba/jabba.sh"
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash"

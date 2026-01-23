@@ -7,7 +7,6 @@ alias ......="cd ../../../../.."
 alias .......="cd ../../../../../.."
 alias ........="cd ../../../../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
 
 # Shortcuts
 alias dl="cd ~/Downloads"
@@ -19,8 +18,10 @@ alias k="kubectl"
 alias p="python3"
 alias s="subl"
 alias t="terraform"
+alias x="tmux"
 
 # Use Python 3 by default
+alias pip="pip3"
 alias python="python3"
 
 # Better git diffs

@@ -19,9 +19,12 @@ brew install \
   awscli \
   aws-vault
 brew install --cask \
+  android-commandlinetools \
   cursor \
   docker \
-  kiro
+  google-cloud-sdk \
+  kiro \
+  ngrok
 
 
 # Remove outdated versions from the cellar and ensure installation is healthy

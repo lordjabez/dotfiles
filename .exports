@@ -36,3 +36,7 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
+
+# Java/Android items
+export JAVA_HOME=/opt/homebrew/opt/jabba/jdk/openjdk@1.17.0/Contents/Home
+export ANDROID_HOME=/opt/homebrew/share/android-commandlinetools
