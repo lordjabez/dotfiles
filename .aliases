@@ -31,8 +31,8 @@ alias gd='git diff --color | sed -E "s/^([^-+ ]*)[-+ ]/\\1/" | less -r'
 alias dsp="docker system prune --volumes --force"
 
 # Base64 tools
-alias bd="pbpaste | base64 --decode | tee /dev/tty | tr -d '\n' | pbcopy"
-alias be="pbpaste | base64 | tee /dev/tty | tr -d '\n' | pbcopy"
+alias b64d="pbpaste | base64 --decode | tee /dev/tty | tr -d '\n' | pbcopy"
+alias b64e="pbpaste | base64 | tee /dev/tty | tr -d '\n' | pbcopy"
 
 # JSON tools
 alias j="pbpaste | jq '.' | tee /dev/tty | tr -d '\n' | pbcopy"
