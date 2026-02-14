@@ -1,14 +1,19 @@
-
 # Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash"
+# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash"
 
 # Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.dotfiles/.{path,exports,aliases,functions,extra,bash_prompt}; do
+for file in ~/.dotfiles/.{path,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+# Ensure brew environment is properly set up
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Everything below is for interactive human sessions only
+
+# Load bash prompt (24ms)
+[ -r ~/.dotfiles/.bash_prompt ] && [ -f ~/.dotfiles/.bash_prompt ] && source ~/.dotfiles/.bash_prompt
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -18,9 +23,6 @@ shopt -s histappend;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
-
-# Ensure brew environment is properly set up
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Enable some Bash features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
@@ -57,27 +59,12 @@ complete -C aws_completer aws
 # Load iTerm integrations
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-# NVM activation
-export NVM_DIR="$(brew --prefix nvm)"
-source "$NVM_DIR/nvm.sh"
+# NVM activation (277ms)
+# export NVM_DIR="$(brew --prefix nvm)"
+# source "$NVM_DIR/nvm.sh"
 
-function aws-profile() {
-  if [[ -z "${1}" ]]; then
-    profiles=$(grep '\[profile' ~/.aws/config | tr -d '[]' | awk '{print $2}')
-    for profile in $profiles; do
-      if [[ "${profile}" == "${AWS_PROFILE}" ]]; then
-        echo "${profile} *"
-      else
-        echo "${profile}"
-      fi
-    done
-  else
-    export AWS_PROFILE="${1}"
-  fi
-}
-
-[ -s "/opt/homebrew/opt/jabba/jabba.sh" ] && source "/opt/homebrew/opt/jabba/jabba.sh"
-
+# Jabba activation (137ms)
+# [ -s "/opt/homebrew/opt/jabba/jabba.sh" ] && source "/opt/homebrew/opt/jabba/jabba.sh"
 
 # Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash"
+# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash"
