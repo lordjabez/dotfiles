@@ -1,14 +1,2 @@
-# Atom-specific items
-.atom/atom-shell
-.atom/blob-store
-.atom/compile-cache
-.atom/dev
-.atom/packages
-.atom/recovery
-.atom/storage
-.atom/.node-gyp
-.atom/.npm
-.atom/.apm
-.atom/.atom*
-
+.DS_Store
 .config
