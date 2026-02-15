@@ -152,6 +152,12 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
+# Friendlier grip default
+alias grip="go-grip --bounding-box=false"
+
+# Quick HTTP server
+alias http-server="python3 -m http.server"
+
 
 # Network helpers
 alias netscan="sudo arp-scan --localnet"
