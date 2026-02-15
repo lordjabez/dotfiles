@@ -1,6 +1,3 @@
-# Kiro CLI pre block. Keep at the top of this file.
-# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash"
-
 # Load the shell dotfiles, and then some:
 for file in ~/.dotfiles/.{path,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -65,6 +62,3 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 # Jabba activation (137ms)
 # [ -s "/opt/homebrew/opt/jabba/jabba.sh" ] && source "/opt/homebrew/opt/jabba/jabba.sh"
-
-# Kiro CLI post block. Keep at the bottom of this file.
-# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash"

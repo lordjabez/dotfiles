@@ -23,7 +23,6 @@ brew install --cask \
   cursor \
   docker \
   google-cloud-sdk \
-  kiro \
   ngrok
 
 
