@@ -17,7 +17,8 @@ brew install \
 # Infrastructure tooling
 brew install \
   awscli \
-  aws-vault
+  aws-vault \
+  gh
 brew install --cask \
   android-commandlinetools \
   cursor \
