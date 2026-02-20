@@ -20,9 +20,6 @@ alias s="subl"
 alias t="terraform"
 alias x="tmux"
 
-# Run Claude Code in tmux
-alias cc='[ -n "$TMUX" ] && claude || tmux new-session claude'
-
 # Use Python 3 by default
 alias pip="pip3"
 alias python="python3"

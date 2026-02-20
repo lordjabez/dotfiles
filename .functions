@@ -220,3 +220,14 @@ function get-cfn-outputs() {
 function python-package-help() {
   python3 -c "import $1; help($1)" 
 }
+
+# Run Claude Code in tmux
+claude-tmux() {
+  if [ -n "${TMUX:-}" ]; then
+    claude "$@"
+  else
+    local cmd
+    printf -v cmd '%q ' claude "$@"
+    tmux new-session "$cmd"
+  fi
+}
