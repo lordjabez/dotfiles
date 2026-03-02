@@ -9,12 +9,14 @@ alias ........="cd ../../../../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 
 # Shortcuts
+alias ct="claude-tmux"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dp="cd ~/Projects"
 alias g="git"
 alias d="docker"
 alias k="kubectl"
+alias m="moremaid --keep-running --theme github ."
 alias p="python3"
 alias s="subl"
 alias t="terraform"
