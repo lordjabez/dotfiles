@@ -1,6 +1,6 @@
 # Load the shell dotfiles, and then some:
 for file in ~/.dotfiles/.{path,exports,aliases,functions,extra}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+	[ -r "$file" ] && source "$file";
 done;
 unset file;
 
@@ -10,7 +10,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Everything below is for interactive human sessions only
 
 # Load bash prompt (24ms)
-[ -r ~/.dotfiles/.bash_prompt ] && [ -f ~/.dotfiles/.bash_prompt ] && source ~/.dotfiles/.bash_prompt
+[ -r ~/.dotfiles/.bash_prompt ] && source ~/.dotfiles/.bash_prompt
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -29,6 +29,7 @@ for option in autocd globstar; do
 done;
 
 # Add tab completion for Bash commands installed by brew
+[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ] && source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 export BASH_COMPLETIONS_FOLDER="$(brew --prefix)/etc/bash_completion.d"
 for completion_file in $BASH_COMPLETIONS_FOLDER/*; do
   source "$completion_file"
@@ -54,7 +55,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 complete -C aws_completer aws
 
 # Load iTerm integrations
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+[ -r "${HOME}/.iterm2_shell_integration.bash" ] && source "${HOME}/.iterm2_shell_integration.bash"
 
 # NVM activation (277ms)
 # export NVM_DIR="$(brew --prefix nvm)"
