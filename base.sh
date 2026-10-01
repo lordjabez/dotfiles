@@ -51,6 +51,7 @@ brew install \
 brew install --cask \
   claude \
   drawio \
+  firefox \
   font-monaspace \
   gimp \
   google-chrome \
